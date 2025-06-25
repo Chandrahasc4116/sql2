@@ -68,4 +68,4 @@ SQL> select * from employee;
      12345 Dinesh                                             M 9191929293 Punagnur                                                              2                                                                                                                                                          
      12346 Teja                                               M 9491929293 Hyderabad                                                             6                                                                                                                                                          
 
-SQL> spool off;
+
