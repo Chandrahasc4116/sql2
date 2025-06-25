@@ -1,0 +1,71 @@
+SQL> create table Employee(EmpId number(5), Name varchar(50), Gender char(1), Mobileno number(10), Address varchar(60),Deptno number(1));
+
+Table created.
+
+SQL> desc employee;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(5)
+ NAME                                               VARCHAR2(50)
+ GENDER                                             CHAR(1)
+ MOBILENO                                           NUMBER(10)
+ ADDRESS                                            VARCHAR2(60)
+ DEPTNO                                             NUMBER(1)
+
+SQL> insert into employee values(12345,'Dinesh','M',9191929293,'Punagnur',5);
+
+1 row created.
+
+SQL> insert into employee values(12346,'Tej','M',9491929293,'Hyderabad',6);
+
+1 row created.
+
+SQL> insert into employee values(12356,'Ajay','M',9491829293,'Banglore',3);
+
+1 row created.
+
+SQL> set linesize 300;
+SQL> select * from employee;
+
+     EMPID NAME                                               G   MOBILENO ADDRESS                                                          DEPTNO                                                                                                                                                          
+---------- -------------------------------------------------- - ---------- ------------------------------------------------------------ ----------                                                                                                                                                          
+     12345 Dinesh                                             M 9191929293 Punagnur                                                              5                                                                                                                                                          
+     12346 Tej                                                M 9491929293 Hyderabad                                                             6                                                                                                                                                          
+     12356 Ajay                                               M 9491829293 Banglore                                                              3                                                                                                                                                          
+
+SQL> update employee set deptno=2 where empid=12345;
+
+1 row updated.
+
+SQL> select * from employee;
+
+     EMPID NAME                                               G   MOBILENO ADDRESS                                                          DEPTNO                                                                                                                                                          
+---------- -------------------------------------------------- - ---------- ------------------------------------------------------------ ----------                                                                                                                                                          
+     12345 Dinesh                                             M 9191929293 Punagnur                                                              2                                                                                                                                                          
+     12346 Tej                                                M 9491929293 Hyderabad                                                             6                                                                                                                                                          
+     12356 Ajay                                               M 9491829293 Banglore                                                              3                                                                                                                                                          
+
+SQL> update employee set name='Teja' where empid=12346;
+
+1 row updated.
+
+SQL> select * from employee;
+
+     EMPID NAME                                               G   MOBILENO ADDRESS                                                          DEPTNO                                                                                                                                                          
+---------- -------------------------------------------------- - ---------- ------------------------------------------------------------ ----------                                                                                                                                                          
+     12345 Dinesh                                             M 9191929293 Punagnur                                                              2                                                                                                                                                          
+     12346 Teja                                               M 9491929293 Hyderabad                                                             6                                                                                                                                                          
+     12356 Ajay                                               M 9491829293 Banglore                                                              3                                                                                                                                                          
+
+SQL> delete from employee where empid=12356;
+
+1 row deleted.
+
+SQL> select * from employee;
+
+     EMPID NAME                                               G   MOBILENO ADDRESS                                                          DEPTNO                                                                                                                                                          
+---------- -------------------------------------------------- - ---------- ------------------------------------------------------------ ----------                                                                                                                                                          
+     12345 Dinesh                                             M 9191929293 Punagnur                                                              2                                                                                                                                                          
+     12346 Teja                                               M 9491929293 Hyderabad                                                             6                                                                                                                                                          
+
+SQL> spool off;
